@@ -1,17 +1,15 @@
 name: eShopOnWeb Build and Test
 
 #Triggers (uncomment line below to use it)
-#on: [push, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
-  RESOURCE-GROUP: rg-eshoponweb-NAME
-  LOCATION: westeurope
+  RESOURCE-GROUP: 1rv23sse18
+  LOCATION: southindia
   TEMPLATE-FILE: infra/webapp.bicep
-  SUBSCRIPTION-ID: YOUR-SUBS-ID
-  WEBAPP-NAME: eshoponweb-webapp-NAME
-
-
+  SUBSCRIPTION-ID: 354d324d-d0e0-4b08-8edb-13053c891ca5
+  WEBAPP-NAME: eshoponweb2327
 jobs:
   #Build, test and publish .net web project in repository
   buildandtest:
@@ -72,7 +70,7 @@ jobs:
         path: bicep-template
         
    #Login in your azure subscription using a service principal (credentials stored as GitHub Secret in repo)
-    - name: Azure Login
+    - name: vandana
       uses: azure/login@v2
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
